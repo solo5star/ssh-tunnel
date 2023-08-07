@@ -7,9 +7,9 @@ services:
     ports:
       - 22:22
     volumes:
-      - ./ssh:/root/.ssh
+      - ./ssh:/ssh
     environment:
-      - TUNNEL_HOST=example-server.com
+      - TUNNEL_HOST=example.com
       - LOCAL_PORT=22
       - REMOTE_HOST=localhost
       - REMOTE_PORT=22
