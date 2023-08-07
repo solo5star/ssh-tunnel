@@ -1,0 +1,15 @@
+version: "3"
+services:
+  ssh-tunnel:
+    image: solo5star/ssh-tunnel
+    build: .
+    restart: unless-stopped
+    ports:
+      - 22:22
+    volumes:
+      - ./ssh:/root/.ssh
+    environment:
+      - TUNNEL_HOST=example-server.com
+      - LOCAL_PORT=22
+      - REMOTE_HOST=localhost
+      - REMOTE_PORT=22
